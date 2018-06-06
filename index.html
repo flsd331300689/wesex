@@ -4,7 +4,6 @@
 <head>
   <meta charset="utf-8">
   <title>微信JS-SDK Demo</title>
-  <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
   <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
   <script>
     $.get("https://qyapi.weixin.qq.com/cgi-bin/gettoken?corpid=ww687731a7f6c5279a&corpsecret=9csgCCP6vVpW7poAuRY---_w36MvPxm8KzaQXedbQTA", function(result) {console.log(result); $(".access_token").text(result.access_token)});
