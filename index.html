@@ -6,7 +6,50 @@
   <title>微信JS-SDK Demo</title>
   <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
   <script>
-    $.get("https://qyapi.weixin.qq.com/cgi-bin/gettoken?corpid=ww687731a7f6c5279a&corpsecret=9csgCCP6vVpW7poAuRY---_w36MvPxm8KzaQXedbQTA", function(result) {console.log(result); $(".access_token").text(result.access_token)});
+    wx.config({
+      beta: true,// 必须这么写，否则wx.invoke调用形式的jsapi会有问题
+      debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+      appId: 'ww687731a7f6c5279a', // 必填，企业微信的corpID
+      timestamp: 1528269051, // 必填，生成签名的时间戳
+      nonceStr: 'czz5ZRAbuHbOixGx', // 必填，生成签名的随机串
+      signature: 'a0c89c270978398018894f9aee664e5bfb466560',// 必填，签名，见附录1
+      jsApiList: [
+      'checkJsApi',
+        'onMenuShareTimeline',
+        'onMenuShareAppMessage',
+        'onMenuShareQQ',
+        'onMenuShareWeibo',
+        'hideMenuItems',
+        'showMenuItems',
+        'hideAllNonBaseMenuItem',
+        'showAllNonBaseMenuItem',
+        'translateVoice',
+        'startRecord',
+        'stopRecord',
+        'onRecordEnd',
+        'playVoice',
+        'pauseVoice',
+        'stopVoice',
+        'uploadVoice',
+        'downloadVoice',
+        'chooseImage',
+        'previewImage',
+        'uploadImage',
+        'downloadImage',
+        'getNetworkType',
+        'openLocation',
+        'getLocation',
+        'hideOptionMenu',
+        'showOptionMenu',
+        'closeWindow',
+        'scanQRCode',
+        'chooseWXPay',
+        'openProductSpecificView',
+        'addCard',
+        'chooseCard',
+        'openCard'
+      ] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+    });
   </script>
 </head>
 <body>
